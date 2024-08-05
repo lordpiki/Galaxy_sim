@@ -12,7 +12,7 @@ Simulation::Simulation(GLFWwindow* window, float fixedTimeStep)
 
     
 
-    for (int i = 0; i < 50; i++)
+    for (int i = 0; i < 1000; i++)
     {
         RigidBody body(10, Helper::getRandVector(), Helper::getRandVector());
 		physicsEngine.addBody(body);
@@ -48,7 +48,6 @@ void Simulation::run() {
             accumulatedTime -= fixedTimeStep;
 
         }
-
         // Render the scene
         renderer.render(physicsEngine.bodies);
 
