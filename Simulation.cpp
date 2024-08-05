@@ -10,11 +10,13 @@ Simulation::Simulation(GLFWwindow* window, float fixedTimeStep)
     : window(window), renderer(window), inputManager(window), fixedTimeStep(fixedTimeStep),
     lastTime(glfwGetTime()), accumulatedTime(0.0), fpsCounter(window) {
 
-    RigidBody sun(1.989e30, Vector2D(0.0f, 0.0f), Vector2D(0.0f, 0.0f));
-    RigidBody earth(5.972e24, Vector2D(151.78e9f, 0.0f), Vector2D(0.0f, 107e3));
+    
 
-    physicsEngine.addBody(sun);
-    physicsEngine.addBody(earth);
+    for (int i = 0; i < 50; i++)
+    {
+        RigidBody body(10, Helper::getRandVector(), Helper::getRandVector());
+		physicsEngine.addBody(body);
+    }
 
     GravityForce* gravity = new GravityForce(Vector2D(0.0f, -9.8f), &physicsEngine);
     physicsEngine.addForce(gravity);
@@ -42,7 +44,7 @@ void Simulation::run() {
         // Update the physics simulation using the fixed time step
         while (accumulatedTime >= fixedTimeStep)
         {
-            physicsEngine.update(fixedTimeStep * 1e6);
+            physicsEngine.update(fixedTimeStep);
             accumulatedTime -= fixedTimeStep;
 
         }

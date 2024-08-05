@@ -9,3 +9,8 @@ float Helper::getRand(float min, float max)
 {
     return min + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (max - min)));
 }
+
+Vector2D Helper::getRandVector(float min, float max)
+{
+    return Vector2D(getRand(min, max), getRand(min, max));
+}
