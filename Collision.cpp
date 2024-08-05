@@ -5,6 +5,7 @@
 
 #define DRAG_COEFFICIENT 0.2f
 
+
 bool Collision::checkCollision(const RigidBody& body1, const RigidBody& body2) {
     return Helper::distance(body1.position, body2.position) < 0.01f * 2;
 }

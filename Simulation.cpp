@@ -10,9 +10,7 @@ Simulation::Simulation(GLFWwindow* window, float fixedTimeStep)
     : window(window), renderer(window), inputManager(window), fixedTimeStep(fixedTimeStep),
     lastTime(glfwGetTime()), accumulatedTime(0.0), fpsCounter(window) {
 
-    
-
-    for (int i = 0; i < 5000; i++)
+    for (int i = 0; i < 15000; i++)
     {
         RigidBody body(10, Helper::getRandVector(), Helper::getRandVector());
 		physicsEngine.addBody(body);

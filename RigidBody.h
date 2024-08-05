@@ -7,6 +7,10 @@ public:
     Vector2D position;
     Vector2D velocity;
     Vector2D acceleration;
+
+    Vector2D gridSection = Vector2D();
+    int currentVecIndex = 0;
+
     //       kg           m                         km/h
     RigidBody(float mass, const Vector2D& position, const Vector2D& velocity);
 

@@ -13,7 +13,7 @@ public:
 
     void update();
     void render();
-    float getFPS() const { return fixedFPS; }
+    int getFPS() const { return fixedFPS; }
 
 private:
     GLFWwindow* window;

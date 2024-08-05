@@ -1,5 +1,7 @@
 #pragma once
 #include "RigidBody.h"
+#include <vector>
+using std::vector;
 
 class Collision {
 public:
@@ -7,4 +9,5 @@ public:
     static void resolveCollision(RigidBody& body1, RigidBody& body2);
     static bool checkWallCollision(RigidBody& body, float windowWidth = 1, float windowHeight = 1);
     static void resolveWallCollision(RigidBody& body, float windowWidth = 1, float windowHeight = 1);
+private:
 };
