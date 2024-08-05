@@ -34,11 +34,11 @@ void PhysicsEngine::integrateMotion(float dt) {
 
 void PhysicsEngine::handleCollisions() {
     // Existing body-to-body collision handling
-    for (RigidBody& body : bodies) {
-        if (Collision::checkWallCollision(body)) {
-            Collision::resolveWallCollision(body);
-        }
-    }
+    //for (RigidBody& body : bodies) {
+    //    if (Collision::checkWallCollision(body)) {
+    //        Collision::resolveWallCollision(body);
+    //    }
+    //}
 
     //for (size_t i = 0; i < bodies.size(); ++i) {
     //    for (size_t j = i + 1; j < bodies.size(); ++j) {

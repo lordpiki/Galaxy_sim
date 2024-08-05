@@ -19,6 +19,16 @@ Vector2D Vector2D::operator/(float scalar) const {
     return Vector2D(x / scalar, y / scalar);
 }
 
+bool Vector2D::operator==(const Vector2D& other) const
+{
+    return x == other.x && y == other.y;
+}
+
+bool Vector2D::operator!=(const Vector2D& other) const
+{
+    return x != other.x || y != other.y;
+}
+
 Vector2D Vector2D::perpendicular() const {
     return Vector2D(-y, x);
 }
@@ -30,4 +40,14 @@ Vector2D Vector2D::normalized() const {
 
 float Vector2D::length() const {
     return std::sqrt(x * x + y * y);
+}
+
+float Vector2D::distance(const Vector2D& other) const
+{
+    return std::sqrt((x - other.x) * (x - other.x) + (y - other.y) * (y - other.y));
+}
+
+float Vector2D::distanceSquared(const Vector2D& other) const
+{
+    return (x - other.x) * (x - other.x) + (y - other.y) * (y - other.y);
 }

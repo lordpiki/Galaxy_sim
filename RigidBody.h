@@ -7,7 +7,7 @@ public:
     Vector2D position;
     Vector2D velocity;
     Vector2D acceleration;
-
+    //       kg           m                         km/h
     RigidBody(float mass, const Vector2D& position, const Vector2D& velocity);
 
     void applyForce(const Vector2D& force);

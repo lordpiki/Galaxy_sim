@@ -13,8 +13,12 @@ int main() {
     // Configure GLFW window properties
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
+    float ratio = 15.0f / 9.0f;
+    int width = 1200;
+    int height = width / ratio;
+
     // Create the GLFW window
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Physics Simulation", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(width, height, "Physics Simulation", nullptr, nullptr);
     if (!window) {
         glfwTerminate();
         // Handle window creation error

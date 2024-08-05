@@ -20,13 +20,18 @@ void Renderer::render(const std::vector<RigidBody>& bodies) {
 
         for (int i = 0; i < numSegments; i++) {
             float theta = 2.0f * 3.1415926f * float(i) / float(numSegments); // Calculate angle for each segment
-            float x = radius * cosf(theta) + body.position.x; // Calculate x-coordinate
-            float y = radius * sinf(theta) + body.position.y; // Calculate y-coordinate
+            float x = radius * cosf(theta) + toGL(body.position.x); // Calculate x-coordinate
+            float y = radius * sinf(theta) + toGL(body.position.y); // Calculate y-coordinate
             glVertex2f(x, y); // Add vertex to the polygon
         }
         glEnd();
-        //cout << "body pos: (" << body.position.x << ", " << body.position.y << ")" << " acc: " << body.acceleration.x << ", " << body.acceleration.y << " vel: " << body.velocity.x << ", " << body.velocity.y << endl;
+        cout << "body pos: (" << body.position.x << ", " << body.position.y << ")" << " acc: " << body.acceleration.x << ", " << body.acceleration.y << " vel: " << body.velocity.x << ", " << body.velocity.y << endl;
     }
 
     glfwSwapBuffers(window);
+}
+
+float Renderer::toGL(float x)
+{
+    return x * IRL_TO_GL_RATIO;
 }
